@@ -55,7 +55,7 @@ public class WarpTheory {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        logger = event.getModLog();
+        logger = event.getModLog()
         try {
             File folder = new File(event.getModConfigurationDirectory() + "/warptheory/");
             if (!folder.exists())
