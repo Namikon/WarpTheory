@@ -70,8 +70,11 @@ public class WarpCommand implements ICommand
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender sender)
     {
-        EntityPlayer player = MiscHelper.getPlayerByName(sender.getCommandSenderName());
-        return player.capabilities.isCreativeMode || MiscHelper.isOp(sender.getCommandSenderName());
+        if (sender != null){
+            EntityPlayer player = MiscHelper.getPlayerByName(sender.getCommandSenderName());
+            return player.capabilities.isCreativeMode || MiscHelper.isOp(sender.getCommandSenderName());
+        }
+        return true;
     }
 
     @Override
